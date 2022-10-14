@@ -7,6 +7,7 @@ export type Episode = ItemOptions & {
 	html?: string;
 	css?: unknown;
 	head?: string;
+	spotifyId?: string;
 };
 
 const files = import.meta.glob('./episodes/*.md', { eager: true });

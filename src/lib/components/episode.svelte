@@ -10,7 +10,7 @@
 	frameborder="0"
 	allowfullscreen=""
 	allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-	src="https://open.spotify.com/embed/episode/5dN7v4YkpNJbXjVlOh2VNh?utm_source=generator"
+	src="https://open.spotify.com/embed/episode/{episode.spotifyId}?utm_source=generator"
 />
 <a href="https://open.spotify.com/show/528EvxMPW9pk5DdCT7iyDb">The Pipeline Guys</a>
 {@html episode.html}
