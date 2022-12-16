@@ -2,7 +2,7 @@
 slug: episodio-0
 title: 'Episodio #0 - Iniziamo!'
 description: Perché The Pipeline Guys?
-date: 2022-02-12
+date: 2021-12-29
 itunesDuration: 2152
 enclosure:
   file: episodio-0.mp3
