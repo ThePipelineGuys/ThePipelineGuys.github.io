@@ -1,10 +1,3 @@
-<script>
-	import Episode from '$lib/components/episode.svelte';
-
-	/** @type {import('./$types').PageData} */
-	export let data;
-</script>
-
 <iframe
 	title="The Pipeline Guys Podcast"
 	style="border-radius:12px"
@@ -16,11 +9,3 @@
 	allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 	loading="lazy"
 />
-
-<div class="flex flex-wrap">
-	{#each data.episodes as episode}
-		<div class="grow text-center px-4 pb-12">
-			<Episode {episode} />
-		</div>
-	{/each}
-</div>
