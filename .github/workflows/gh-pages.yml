@@ -25,8 +25,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Generate Assets
+        run: |
+          set -x
+          rm -rf ./static/images/posts || echo
+          git clone https://github.com/matfantinel/image-transmutation
+          pushd image-transmutation || exit 1
+          npm ci
+          node ./index.js --run --sourceFolder "../static/images/posts-archive" --targetFolder "../static/images/posts" --inputFormats "jpg" --inputFormats "jpeg" --inputFormats "png" --outputFormats "webp" --outputFormats "avif" --outputFormats "png"
+          popd || exit 1
+          rm -rf ./static/images/posts-archive || echo
+
       - name: Clean Install
-        run: yarn install --frozen-lockfile
+        run: yarn ci
 
       - name: Build
         run: yarn build
