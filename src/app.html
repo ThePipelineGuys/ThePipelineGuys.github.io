@@ -3,11 +3,16 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<link rel="alternate" type="application/rss+xml" title="Subscribe" href="https://thepipelineguys.github.io/feed.xml" />
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="Subscribe"
+			href="https://thepipelineguys.github.io/feed.xml"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 	</head>
-	<body>
-		<div>%sveltekit.body%</div>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

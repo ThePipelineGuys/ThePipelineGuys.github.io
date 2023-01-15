@@ -1,5 +1,3 @@
-import Prism from 'prismjs';
-import 'prism-svelte';
 import type { ItemOptions } from 'podcast';
 import podcast, { site } from '$lib/podcast';
 

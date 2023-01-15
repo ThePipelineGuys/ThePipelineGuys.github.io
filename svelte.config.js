@@ -1,28 +1,21 @@
-import adapter from '@sveltejs/adapter-static';
-import svelte from 'svelte-preprocess';
+import adapterStatic from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
+	extensions: ['.svelte', '.md'],
+	kit: {
+		adapter: adapterStatic()
+	},
 	preprocess: [
-		svelte({
-			postcss: true
-		}),
+		vitePreprocess(),
 		mdsvex({
 			extensions: ['.md'],
 			rehypePlugins: [rehypeExternalLinks]
 		})
-	],
-
-	extensions: ['.svelte', '.md'],
-
-	kit: {
-		adapter: adapter(),
-		trailingSlash: 'always'
-	}
+	]
 };
 
 export default config;
