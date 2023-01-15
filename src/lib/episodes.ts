@@ -2,13 +2,15 @@ import type { ItemOptions } from 'podcast';
 import podcast, { site } from '$lib/podcast';
 
 export type Episode = ItemOptions & {
+	metadata?: unknown | undefined;
+	default?: unknown | undefined;
 	html?: string;
 	css?: unknown;
 	head?: string;
 	spotifyId?: string;
 };
 
-const files = import.meta.glob('./episodes/*.md', { eager: true });
+const files: Record<string, Episode> = import.meta.glob('./episodes/*.md', { eager: true });
 
 const episodes: Episode[] = [];
 for (const path in files) {
