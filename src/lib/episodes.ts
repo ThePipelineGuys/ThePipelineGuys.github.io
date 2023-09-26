@@ -26,11 +26,11 @@ for (const path in files) {
 			itunesAuthor: file.metadata?.author ?? podcast.author,
 			itunesSubtitle: 'Just another Episode',
 			itunesSummary: file.metadata?.description ?? 'Just another Episode',
-			itunesTitle: file.metadata.title,
+			itunesTitle: file.metadata?.title,
 			enclosure: {
 				type: 'audio/mpeg',
-				...file.metadata.enclosure,
-				url: `${site.cdnUrl}episodes/${file.metadata.enclosure.file}`
+				...file.metadata?.enclosure,
+				url: `${site.cdnUrl}episodes/${file.metadata?.enclosure?.file}`
 			}
 		});
 	}
