@@ -23,9 +23,9 @@ for (const path in files) {
 			guid: path,
 			content: rendered.html,
 			author: file.metadata?.author ?? podcast.author,
-			itunesAuthor: file.metadata.author ?? podcast.author,
+			itunesAuthor: file.metadata?.author ?? podcast.author,
 			itunesSubtitle: 'Just another Episode',
-			itunesSummary: file.metadata.description ?? 'Just another Episode',
+			itunesSummary: file.metadata?.description ?? 'Just another Episode',
 			itunesTitle: file.metadata.title,
 			enclosure: {
 				type: 'audio/mpeg',
