@@ -30,3 +30,25 @@ yarn build
 ```
 
 You can preview the production build with `yarn preview`.
+
+## Tools
+
+### Conversion
+
+```bash
+for file in $(find . -name "*.mp4")
+do
+    echo $file;
+    ffmpeg -i $file -b:a 64k  -minrate 64k  -maxrate 64k  -bufsize 64k -codec:a libmp3lame -vn -preset veryfast $file.mp3;
+done
+```
+### Metadata
+
+```bash
+for file in $(find . -name "*.mp3" | sort)
+do
+    echo $file;
+    mdls $file | grep Duration | awk '{ print $3 }' | cut -d '.' -f 1
+    mdls $file | grep LogicalSize  | awk '{ print $3 }' | cut -d '.' -f 1
+done
+```

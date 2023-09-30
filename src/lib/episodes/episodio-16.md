@@ -5,8 +5,6 @@ description: Andiamo insietro nella storia delle Cloud Native Applications.
 date: 2023-04-12
 itunesDuration: 3456
 enclosure:
-  file: episodio-13.mp3
-  size: 27654264
+  file: episodio-16.mp3
+  size: 69161305
 ---
-
-_TDA_
